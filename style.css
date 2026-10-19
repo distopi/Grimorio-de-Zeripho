@@ -1,0 +1,40 @@
+/* Padrão Escuro (Dark Mode) por omissão */
+:root {
+    --bg-main: #030712;
+    --bg-card: #111827;
+    --text-main: #f9fafb;
+    --border-color: #1f2937;
+    --accent: #d97706;
+    --accent-hover: #b45309;
+    --accent-alpha: rgba(217, 119, 6, 0.15);
+}
+
+/* Padrão Claro quando a classe .dark é removida da tag html */
+html:not(.dark) {
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --border-color: #cbd5e1;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, .font-rpg { font-family: 'Cinzel', serif; }
+
+/* Tooltip customizado */
+.dnd-tooltip {
+    visibility: hidden;
+    position: absolute;
+    z-index: 50;
+    opacity: 0;
+    transition: opacity 0.2s;
+}
+.has-tooltip:hover .dnd-tooltip {
+    visibility: visible;
+    opacity: 1;
+}
